@@ -3,14 +3,14 @@ import org.scalajs.dom.{document, Node}
 
 object HelloWorld {
 
-  def appendHello(targetNode: Node, text: String): Unit = {
-    val titleNode = document.createElement("h1")
+  def appendNode(targetNode: Node, text: String, tagName: String): Unit = {
+    val childNode = document.createElement(tagName)
     val textNode = document.createTextNode(text)
-    titleNode.appendChild(textNode)
-    targetNode.appendChild(titleNode)
+    childNode.appendChild(textNode)
+    targetNode.appendChild(childNode)
   }
 
   def main(args: Array[String]): Unit = {
-    appendHello(document.body, "Hello World")
+    appendNode(document.body, "Hello World!", "h1")
   }
 }
